@@ -11,6 +11,9 @@ sudo npm install -g typescript
 sudo npm install -g express
 sudo npm install -g mongodb
 sudo npm install -g mongoose
+sudo npm install -g react
+sudo npm install -g flux
+sudo npm install -g pug
 
 
 //setup docker
@@ -26,7 +29,7 @@ sudo add-apt-repository \
 sudo apt-get update
 sudo apt-get -y install docker-engine
 
-//install vcloud
+//install gcloud
 export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
 echo "deb https://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
