@@ -9,11 +9,14 @@ sudo apt-get install -y nodejs
 sudo npm install -g angular
 sudo npm install -g typescript
 sudo npm install -g express
-sudo npm install -g mongodb
 sudo npm install -g mongoose
 sudo npm install -g react
 sudo npm install -g flux
 sudo npm install -g pug
+
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
+echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
+sudo apt-get install -y mongodb-org
 
 
 //setup docker
@@ -43,6 +46,7 @@ sudo apt-get update
 
 //install vs codee
 //install google chrome
+//install google postman
 
 
 //sign in to git and pull
@@ -50,3 +54,4 @@ git config --global user.email "drewgray@gmail.com"
 git config --global user.name "Drew Gray"
 
 //sign in to gcloud and pull
+
