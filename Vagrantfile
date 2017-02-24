@@ -1,7 +1,5 @@
 Vagrant.configure("2") do |config|
-  #config.vm.box = "hashicorp/precise64"
-  #config.vm.box = "v0rtex/xenial64"
-  config.vm.box = "boxcutter/ubuntu1604-desktop"
+  config.vm.box = "marcoaltieri/ubuntu-desktop-16.04-64bit"
   
    config.vm.provider "virtualbox" do |vb|
    
@@ -12,6 +10,10 @@ Vagrant.configure("2") do |config|
   
      # Customize the amount of memory on the VM:
      vb.memory = "4096"
+	 
+	 #disable usb 2.0
+	 vb.customize ["modifyvm", :id, "--usb", "on"]
+     vb.customize ["modifyvm", :id, "--usbehci", "off"]
 	 
    end
 

@@ -5,6 +5,9 @@ export DEBIAN_FRONTEND=noninteractive
 sudo apt-get update
 sudo apt update
 
+# sudo locale-gen "en_US.UTF-8"
+# sudo localectl set-locale LANG="en_US.UTF-8"
+
 sudo cp /vagrant/nodesource.list /etc/apt/sources.list.d/
 
 sudo apt-get install -y curl
@@ -69,11 +72,10 @@ sudo apt-get install -y kubectl
 # //update all 
 sudo apt-get update
 
-# //install vs codee
-sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make
-sudo apt-get update
-sudo apt-get install -y ubuntu-make
-umake ide visual-studio-code
+# //install vs code
+wget https://az764295.vo.msecnd.net/stable/5be4091987a98e3870d89d630eb87be6d9bafd27/code_1.5.3-1474533365_amd64.deb
+sudo dpkg -i code_1.5.3-1474533365_amd64.deb
+
 
 # //install google chrome
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
@@ -90,10 +92,10 @@ git config --global user.name "Drew Gray"
 
 # //sign in to gcloud and pull
 
-mkdir ~/dev 
-cd ~/dev
-git clone https://github.com/drewgray/drwgry.git
-git clone https://github.com/drewgray/amptimal.git
+mkdir dev 
+cd dev
+sudo git clone https://github.com/drewgray/drwgry.git
+sudo git clone https://github.com/drewgray/amptimal.git
 
 cd drwgry
 npm install
