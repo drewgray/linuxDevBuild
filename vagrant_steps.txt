@@ -1,0 +1,4 @@
+//under project dir
+vagrant init
+
+//edit Vagrantfile with machine box image name...
