@@ -68,7 +68,17 @@ sudo apt install -y docker.io
 sudo apt-get update
 
 # //install vs codee
+sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make
+sudo apt-get update
+sudo apt-get install -y ubuntu-make
+umake ide visual-studio-code
+
 # //install google chrome
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
+sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+sudo apt-get update 
+sudo apt-get install -y google-chrome-stable
+
 # //install google postman
 
 
