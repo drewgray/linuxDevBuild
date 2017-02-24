@@ -9,6 +9,8 @@ sudo cp /vagrant/nodesource.list /etc/apt/sources.list.d/
 
 sudo apt-get install -y curl
 sudo apt-get install -y git
+# sudo apt-get install -y xfce4 virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11 virtualbox-guest-x86_64
+# sudo sed -i 's/allowed_users=.*$/allowed_users=anybody/' /etc/X11/Xwrapper.config
 
 # //install nodejs
 curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -
@@ -33,12 +35,12 @@ sudo npm install -g pug
 sudo npm install -g nodemon
 sudo npm update -g
 
-# apt-key adv --keyserver hkp:# //keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
-# #ubuntu 16.04
-# echo "deb [ arch=amd64,arm64 ] http:# //repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-3.4.list
-# #ubuntu 12.04
-# #echo "deb [ arch=amd64 ] http://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
-# sudo apt-get install -y mongodb-org
+apt-key adv --keyserver hkp:# //keyserver.ubuntu.com:80 --recv 0c49f3730359a14518585931bc711f9ba15703c6
+# ubuntu 16.04
+#sudo sh -c 'echo "deb [ arch=amd64,arm64 ] http:# //repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-3.4.list'
+# ubuntu 12.04
+# echo "deb [ arch=amd64 ] http://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
+sudo apt-get install -y mongodb-org
 
 
 # # //setup docker
@@ -56,13 +58,13 @@ sudo npm update -g
 sudo apt install -y docker.io
 
 # //install gcloud
-# export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
-# echo "deb https:# //packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
-# curl https:# //packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-# sudo apt-get update && sudo apt-get install -y google-cloud-sdk
-# sudo apt-get install -y google-cloud-sdk-app-engine-python
-# sudo apt-get install -y google-cloud-sdk-app-engine-java
-# sudo apt-get install -y kubectl
+export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
+#sudo sh -c 'echo "deb https:# //packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list'
+#curl https:# //packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+sudo apt-get update && sudo apt-get install -y google-cloud-sdk
+sudo apt-get install -y google-cloud-sdk-app-engine-python
+sudo apt-get install -y google-cloud-sdk-app-engine-java
+sudo apt-get install -y kubectl
 
 # //update all 
 sudo apt-get update
@@ -96,3 +98,8 @@ git clone https://github.com/drewgray/amptimal.git
 cd drwgry
 npm install
 
+# sudo VBoxClient --clipboard
+# sudo VBoxClient --draganddrop
+# sudo VBoxClient --display
+# sudo VBoxClient --checkhostversion
+# sudo VBoxClient --seamless

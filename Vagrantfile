@@ -1,9 +1,13 @@
 Vagrant.configure("2") do |config|
   #config.vm.box = "hashicorp/precise64"
-  config.vm.box = "v0rtex/xenial64"
+  #config.vm.box = "v0rtex/xenial64"
+  config.vm.box = "boxcutter/ubuntu1604-desktop"
   
    config.vm.provider "virtualbox" do |vb|
+   
      # Display the VirtualBox GUI when booting the machine
+	 vb.gui = true;
+	 
      vb.name = "drwgry-vm"
   
      # Customize the amount of memory on the VM:
