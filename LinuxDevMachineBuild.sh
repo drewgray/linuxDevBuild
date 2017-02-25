@@ -72,9 +72,9 @@ sudo apt-get install -y kubectl
 # //update all 
 sudo apt-get update
 
-# //install vs code
-wget https://az764295.vo.msecnd.net/stable/5be4091987a98e3870d89d630eb87be6d9bafd27/code_1.5.3-1474533365_amd64.deb
-sudo dpkg -i code_1.5.3-1474533365_amd64.deb
+# # //install vs code !Just install it from website
+# wget https://az764295.vo.msecnd.net/stable/5be4091987a98e3870d89d630eb87be6d9bafd27/code_1.5.3-1474533365_amd64.deb
+# sudo dpkg -i code_1.5.3-1474533365_amd64.deb
 
 
 # //install google chrome
