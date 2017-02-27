@@ -1,0 +1,5 @@
+Start up script
+----
+bring up mongodb
+bring up node app
+bring up angular-src

@@ -5,15 +5,10 @@ export DEBIAN_FRONTEND=noninteractive
 sudo apt-get update
 sudo apt update
 
-# sudo locale-gen "en_US.UTF-8"
-# sudo localectl set-locale LANG="en_US.UTF-8"
-
 sudo cp /vagrant/nodesource.list /etc/apt/sources.list.d/
 
 sudo apt-get install -y curl
 sudo apt-get install -y git
-# sudo apt-get install -y xfce4 virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11 virtualbox-guest-x86_64
-# sudo sed -i 's/allowed_users=.*$/allowed_users=anybody/' /etc/X11/Xwrapper.config
 
 # //install nodejs
 curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -
@@ -36,34 +31,34 @@ sudo npm install -g react
 sudo npm install -g flux
 sudo npm install -g pug
 sudo npm install -g nodemon
+sudo npm install -g jasmine
+sudo npm install -g karma
+sudo npm install -g karmacli
+sudo npm install -g angular2-flash-messages
 sudo npm update -g
 
 apt-key adv --keyserver hkp:# //keyserver.ubuntu.com:80 --recv 0c49f3730359a14518585931bc711f9ba15703c6
 # ubuntu 16.04
-#sudo sh -c 'echo "deb [ arch=amd64,arm64 ] http:# //repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-3.4.list'
-# ubuntu 12.04
-# echo "deb [ arch=amd64 ] http://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
+sudo sh -c 'echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" >> /etc/apt/sources.list.d/mongodb-org-3.4.list'
+sudo apt-get update
 sudo apt-get install -y mongodb-org
 
 
 # # //setup docker
-# curl -fsSL https:# //apt.dockerproject.org/gpg | sudo apt-key add -
+curl -fsSL https:# //apt.dockerproject.org/gpg | sudo apt-key add -
 # # //verify 58118E89F3A912897C070ADBF76221572C52609D
-# apt-key fingerprint 58118E89F3A912897C070ADBF76221572C52609D
+apt-key fingerprint 58118E89F3A912897C070ADBF76221572C52609D
 
-# sudo add-apt-repository \
-       # "deb https:# //apt.dockerproject.org/repo/ \
-       # ubuntu-$(lsb_release -cs) \
-       # main"
+sudo add-apt-repository "deb [arch=amd64] https:# //apt.dockerproject.org/repo/ubuntu-$(lsb_release -cs) main"
 	   
-# sudo apt-get update
-# sudo apt-get -y install docker-engine
-sudo apt install -y docker.io
+sudo apt-get update
+sudo apt-get -y install docker-engine
+#sudo apt install -y docker.io
 
 # //install gcloud
-export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
-#sudo sh -c 'echo "deb https:# //packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list'
-#curl https:# //packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+sudo sh -c 'export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"'
+sudo sh -c 'echo "deb [arch=amd64] https://packages.cloud.google.com/apt cloud-sdk-$(lsb_release -c -s) main" >> /etc/apt/sources.list.d/google-cloud-sdk.list'
+curl https:# //packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 sudo apt-get update && sudo apt-get install -y google-cloud-sdk
 sudo apt-get install -y google-cloud-sdk-app-engine-python
 sudo apt-get install -y google-cloud-sdk-app-engine-java
