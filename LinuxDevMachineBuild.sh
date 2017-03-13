@@ -9,6 +9,8 @@ sudo cp /vagrant/nodesource.list /etc/apt/sources.list.d/
 
 sudo apt-get install -y curl
 sudo apt-get install -y git
+sudo apt-get install -y maven
+sudo apt-get install -y gradle
 
 # //install nodejs
 curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -
