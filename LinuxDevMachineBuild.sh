@@ -35,6 +35,14 @@ sudo npm install -g jasmine
 sudo npm install -g karma
 sudo npm install -g karmacli
 sudo npm install -g angular2-flash-messages
+sudo npm install -g angular2-jwt
+sudo npm install -g nodemailer
+sudo npm install -g winston
+sudo npm install -g foscam
+sudo npm install -g node-authorization
+sudo npm install -g angular2-modal
+sudo npm install -g ng2-google-charts
+sudo npm install -g multer
 sudo npm update -g
 
 apt-key adv --keyserver hkp:# //keyserver.ubuntu.com:80 --recv 0c49f3730359a14518585931bc711f9ba15703c6
@@ -42,6 +50,25 @@ apt-key adv --keyserver hkp:# //keyserver.ubuntu.com:80 --recv 0c49f3730359a1451
 sudo sh -c 'echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" >> /etc/apt/sources.list.d/mongodb-org-3.4.list'
 sudo apt-get update
 sudo apt-get install -y mongodb-org
+
+#python
+sudo apt install -y python3-pip
+sudo pip3 install --upgrade pip
+sudo apt-get install build-essential libssl-dev libffi-dev python-dev
+#setup download of all pip packages needed
+sudo pip3 install matplotlib
+sudo pip3 install sciypy
+sudo pip3 install numpy
+sudo pip3 install tensorflow
+sudo pip3 install keras
+sudo pip3 install jupyter
+sudo pip3 install pandas
+sudo pip3 install pandas_datareader
+sudo pip3 install bs4
+sudo pip3 install sklearn
+
+#go
+sudo apt install -y golang-go
 
 
 # # //setup docker
@@ -54,6 +81,9 @@ sudo add-apt-repository "deb [arch=amd64] https:# //apt.dockerproject.org/repo/u
 sudo apt-get update
 sudo apt-get -y install docker-engine
 #sudo apt install -y docker.io
+
+sudo apt-get -y install filezilla
+sudo apt-get -y install unity-tweak-tool
 
 # //install gcloud
 sudo sh -c 'export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"'
